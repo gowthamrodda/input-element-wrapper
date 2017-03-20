@@ -1,0 +1,5 @@
+ <label class="control-label {{labelClass}}">
+    {{label}}
+    <input [ngClass]="{'error': !control.valid && !control.pristine && !this.focused}" class="form-control" name="{{name}}" type="{{type}}" [ngModel]="model" (ngModelChange)="pushValue($event)" (keypress)="filterInput($event)" placeholder="{{placeholder}}" (focus)="onFocus($event)" (blur)="onBlur($event)" />
+</label>
+<my-control-messages *ngIf="!control.pristine && !focused" [control]="control"></my-control-messages>
